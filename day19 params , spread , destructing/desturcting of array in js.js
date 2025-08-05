@@ -38,7 +38,7 @@ const employee={
 
 const {name , dept:deptId='iti'} = employee
 // console.log(id,name);
-console.log(employeeId , name ,deptId );
+console.log( name ,deptId );
 const{age} = employee
 // e.log(age);
 
