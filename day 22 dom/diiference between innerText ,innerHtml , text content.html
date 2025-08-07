@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id ="demo">
+        hello
+        <span style="display: none;">span element</span>
+        none
+    </div>
+
+    <script>
+        const demoId = document.body.children[0]
+        // console.log(demoId);
+        console.log("inner html :" , demoId.innerHTML);
+        console.log("inner text :" , demoId.innerText);
+           console.log("Text content :" ,demoId.textContent);
+            
+
+    </script>
+</body>
+</html>
