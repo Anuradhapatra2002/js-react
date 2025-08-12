@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>appendchild & append</title>
+    <style>
+        .container{
+            color: green;
+            border: 2px solid black;
+            padding: 10px;
+        }
+        .card{
+            width: 70%;
+            height: 80px;display:flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            font-size: 36px;
+            border: 2px solid violet;
+            background-color: aqua;
+
+        }
+        h1{
+            font-size: 1rem;
+        }
+    </style>
+    <script>
+        const container = document.querySelector("#para")
+        // const card = document.querySelector('.card')
+        // const h2 = document.querySelector('h2')
+        //  const h1 = document.querySelector('h1')
+        //  console.log(h1);
+        
+
+        //  const firstPara = document.querySelector('#firstParagraph') 
+        //  setTimeout(()=>{
+        //     firstpara.remove()
+        //  },3000)
+         //===================insertAdjusentHtml , insert adjucentElemnets  , inserAdjucentText
+         // closest
+
+        console.log(container);
+        
+         
+
+
+    </script>
+
+
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>appenedchild & append </h1>
+    <div class="const ">
+        <div class="card"></div>
+    </div>
+    <h2>
+        prepand
+    </h2>
+
+    <p id="para">This is my first para</p>
+
+    <!-- diff between append & append -->
+
+    <!-- 1.append child return the element but append doesnot return the elemennt-->
+    <!-- 2.when we insert text in the appendchild it gets error but when we dd text in append() it works doesn't create any error-->
+    <!-- 3. when we append more than 2 or 3 element in case of appendchild it add the only firstElement but in case of append when we add 3 element theh 3 element will be addded in case of append 3 element will be added-->
+    <!-- in case of append when we add null it doest not throws any error but in  case of appendchild when we try to add null it throws an errror-->
+
+
+
+    
+</body>
+</html>

@@ -113,3 +113,85 @@ const a = document.querySelector("h2").getAttribute("userName")
 //what is the difference between node & element 
 
 //Everynode can be an element but everelement cannot be a node
+
+//=============9.8.2025==========================
+// //===============HOW TO APPLY STYLES USING JS===================
+// document.querySelectorAll('[userName]')
+// NodeList(2) [h2, h2]
+// document.querySelectorAll('[userName]')[0].style.color="green"
+// 'green'
+// document.querySelectorAll('[userName]')[1].style.color="greenYellow"
+// 'greenYellow'
+
+let ab = document.querySelectorAll("a")
+ console.log(ab);
+// ab[0].style.color="teal"
+// ab[1].style.color="teal"
+// ab[2].style.color="teal"
+// ab[3].style.color="teal"
+
+
+// 
+// for(const an of ab){
+//      an.style.color="red";
+//      
+// }
+
+// ab.forEach((link)=>{
+//      link.style.color="cyan"
+//      link.style.textDecoration ='none'
+//      link.style.fontWeight='700'
+//      link.style.fontFamily='cursive'
+//      link.style.fontSize='18px'
+// } 
+// )
+
+
+// ab.forEach((link)=>{
+//      link.style.cssText=`
+//     color: red;
+//     text-decoration: none;
+//     font-family: 'Courier New', Courier, monospace;
+//     text-decoration-thickness:initial ;
+//     background-color: aquamarine;`
+// })
+
+// ab.forEach(link=>link.setAttribute('class' , 'border-link'))
+// ab.forEach(link=>link.setAttribute('class' , 'cyan-link'))//
+// //when we add  set attributes the it overide
+// // ab.forEach(link=>link.className='cyan-link')
+// // ab.forEach(link=>link.className='border-link')
+
+
+// // ab.forEach(link=>link.classList)
+// // ab.forEach(link=>link.classList.add('cyan-link'))
+// // ab.forEach(link=>link.classList.add('border-link'))
+// //when we add classList.add() or classList.toggle() it dont override 
+
+// //=============================10.08.2025========================================
+// //=====================Acessing parent element , sibiling element , children=====================
+// script.js:127 NodeList(4) [a, a, a, a]
+// document.querySelector("a")
+// <a href=​"https:​/​/​en.wikipedia.org/​wiki/​Graphical_user_interface" target=​"_blank" title=​"Graphical user interface">​graphical user interface​</a>​
+// let firstlink = 
+// <a href=​"https:​/​/​en.wikipedia.org/​wiki/​Graphical_user_interface" target=​"_blank" title=​"Graphical user interface">​graphical user interface​</a>​
+// VM266:2 Uncaught SyntaxError: Unexpected token '<'
+// let firstlink = 
+// <a href=​"https:​/​/​en.wikipedia.org/​wiki/​Graphical_user_interface" target=​"_blank" title=​"Graphical user interface">​graphical user interface​</a>​
+// VM270:2 Uncaught SyntaxError: Unexpected token '<'
+// const firstLink = docume
+// VM351:1 Uncaught ReferenceError: docume is not defined
+//     at <anonymous>:1:19
+// (anonymous) @ VM351:1
+// const firstLink = document.querySelector("a")
+// undefined
+// firstLink.nextElementSibling
+// <a target=​"_blank" href=​"https:​/​/​en.wikipedia.org/​wiki/​HTML">​HTML​</a>​
+// firstLink.nextElementSibling.nextElementSibling
+// <a target=​"_blank" href=​"https:​/​/​en.wikipedia.org/​wiki/​CSS">​CSS​</a>​
+// firstLink.nextElementSibling.nextElementSibling.nextElementSibling
+// <a target=​"_blank" href=​"https:​/​/​en.wikipedia.org/​wiki/​JavaScript">​JavaScript​</a>​
+// firstLink.nextElementSibling.nextElementSibling.nextSibling
+// ", and "
+// firstLink.nextElementSibling.nextElementSibling.nextSibling
+// ", and "

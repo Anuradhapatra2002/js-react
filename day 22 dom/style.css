@@ -1,0 +1,12 @@
+.cyan-link{
+    color: red;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration-thickness:initial ;
+    background-color: aquamarine;
+
+
+}
+.border-link{
+    border: 2px solid black;
+}
