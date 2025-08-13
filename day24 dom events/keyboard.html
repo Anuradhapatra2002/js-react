@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Keyboard Event Tracker</title>
+        <style>
+            body {
+                font-family: cursive;
+                text-align: center;
+                margin: 20px;
+            }
+
+            h1 {
+                margin-bottom: 20px;
+            }
+
+            .container {
+                margin: auto;
+                max-width: 700px;
+                border: 2px solid red;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 20px;
+            }
+
+            .key-card {
+                width: 120px;
+                height: 80px;
+                display: inline-block;
+                padding: 15px 25px;
+                margin: 10px;
+                background-color: #3498db;
+                color: white;
+                border-radius: 5px;
+                font-weight: bold;
+                transition: transform 0.2s, background-color 0.3s;
+            }
+
+            .key-card:hover {
+                transform: scale(1.1);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Keyboard Event Tracker</h1>
+        <p>Press any key and watch the magic!</p>
+        <div class="container"></div>
+        <script>
+        const container= document.querySelector(".container")
+        console.log(container);
+
+        
+        const fun = (e)=>{
+            // console.log('key down ' ,e.key , e,code , e.type);
+            const card = document.createElement('div')
+            card.classList.add('key-card')
+            card.innerText=`${e.type}
+            key:${e.type}
+            code:${e.code}
+            `
+            container.append(card)
+            
+        }
+        document.addEventListener('keydown' , fun)//key down when key is preesed
+        document.addEventListener('keyup' , fun)//keyup when key is realse
+
+        document.addEventListener('keypress' , fun)//deprecated when we use ctrl not used keypress
+        </script>
+
+    </body>
+</html>

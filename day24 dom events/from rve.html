@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            border: 2px solid blue;
+            padding: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <form action="/forms-submit">
+        <input type="text" placeholder="Enter user Name">
+        <button type="submit">submit</button>
+    </form>
+    <script>
+        // const form = document.querySelector('form')
+        // form.addEventListener('submit' ,(e) =>{
+        //     e.preventDefault()
+            
+        //     // console.log('submit event occured');
+        //     const input=document.querySelector('input')
+        //     console.dir(input);
+        //     console.log('input text :-' , input.value);
+        //     // console.log(input.innerText);
+            
+        //     // <a>--------------</a>context extract by innerHtml or innerText
+        //     //we extract to value of input field the we use value
+
+            
+        // })
+
+        // //===================================================================
+         const input = document.querySelector('input')
+         input.addEventListener('focus', ()=>{
+             console.log('focus on input fieled');
+            
+         })
+        //============================
+         const input1 = document.querySelector('input')
+        input.addEventListener('blur', ()=>{
+             console.log('focus removed fom input feild');
+            
+        })
+    </script>
+</body>
+</html>
