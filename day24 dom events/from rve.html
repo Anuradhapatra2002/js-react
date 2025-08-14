@@ -13,14 +13,27 @@
     </style>
 </head>
 <body>
-    <form action="/forms-submit">
-        <input type="text" placeholder="Enter user Name">
+    <form action="/forms-submit" >
+        <input type="text" placeholder="Enter user Name" name="userName">
+        <br>
+        <br>
+        <label >
+            choose an ice cream flavour
+            <select class="ice-cream" name="flavour">
+                <option value="">select one</option>
+                <option value="butterscoth">Butter Scoth</option>
+                <option value="choclate">choclate</option>
+                <option value="vanila">vanila</option>
+            </select>
+        </label>
+        <br>
+        <br>
         <button type="submit">submit</button>
     </form>
     <script>
         // const form = document.querySelector('form')
         // form.addEventListener('submit' ,(e) =>{
-        //     e.preventDefault()
+          // e.preventDefault()
             
         //     // console.log('submit event occured');
         //     const input=document.querySelector('input')
@@ -34,18 +47,48 @@
             
         // })
 
-        // //===================================================================
-         const input = document.querySelector('input')
-         input.addEventListener('focus', ()=>{
-             console.log('focus on input fieled');
+         //===================================================================
+          const inpu = document.querySelector('input')
+          inpu.addEventListener('focus', ()=>{
+              console.log('focus on input fieled');
+            
+          })
+        // //============================
+          const input1 = document.querySelector('input')
+         input.addEventListener('blur', ()=>{
+              console.log('focus removed fom input feild');
             
          })
-        //============================
-         const input1 = document.querySelector('input')
-        input.addEventListener('blur', ()=>{
-             console.log('focus removed fom input feild');
+
+        //==================14-08-2025===========================
+        const selectElement = document.querySelector('.ice-cream')
+        selectElement.addEventListener('change',(e) =>{
+            console.log('change event occured');
+            console.log( e.target , e.target.value);
+            
             
         })
+        
+        const input = document.querySelector('input')
+        input.addEventListener('input' , (e) =>{
+            console.log('cahnge event occured in the input fieled');
+            console.log(e.target.value);
+            
+        })
+        const form = document.querySelector('form')
+        form.addEventListener('submit' , (e) =>{
+            e.preventDefault();
+            const formData = new FormData(form)
+            console.log(formData);
+            for (const  [key , value] of formData.entries()){
+                console.log(`${key} : ${value}`);
+                
+            }
+        
+            
+
+        })
+
     </script>
 </body>
 </html>
