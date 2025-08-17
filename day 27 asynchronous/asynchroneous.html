@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Asynchroneous programming</h1>
+    <p>Asynchroneous is an ability to <b> multiple opertrion without blocking the execution of the main thread</b></p>
     <script>
         console.log(1);
         console.log(2);
         console.log(3);
 
         console.log(4);
-        setTimeout(function (){
+        setTimeout(function () {
             console.log(5);
-            
-        },2000)
+
+        }, 2000)
         console.log(6);
-        
-        
-        
-        
-        
-    </script>    
+    </script>
 </body>
+
 </html>
