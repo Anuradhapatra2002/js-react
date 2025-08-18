@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body style="font-family: cursive">
+    <h1>Promises In JS</h1>
+    <p>
+        - A Promise in JavaScript is an object that represents the eventual
+        completion (or failure) of an asynchronous operation and its
+        resulting value.
+    </p>
+    <p>
+        - It allows us to write asynchronous code that is more readable and
+        manageable, avoiding the "callback hell" that often occurs with
+        deeply nested callbacks.
+    </p>
+
+    <h3>A Promise have 3 states</h3>
+    <ul>
+        <li>
+            <p>
+                <b>pending:-</b> The initial state, neither fulfilled nor
+                rejected.
+            </p>
+        </li>
+        <li>
+            <p>
+                <b>resolve (or fulfill):-</b> The operation completed
+                successfully, and the promise has a resulting value.
+            </p>
+        </li>
+        <li>
+            <p>
+                <b>reject:-</b> The operation failed, and the promise has a
+                reason for the failure (typically an error object).
+            </p>
+        </li>
+    </ul>
+
+    <h3>then() & catch() method in Promises</h3>
+    <ul>
+        <li><b>then():- </b> When a promise is resolved, then() is automatically executed.</li>
+        <li><b>catch():- </b> When a promise is rejected, catch() is automatically executed.</li>
+    </ul>
+
+    <h3>Promise Chaining</h3>
+    <p>- Promise chaining is a way where we can call multiple promises one after another, so that each one waits for the previous one to finish before it runs.</p>
+    <p>- eg: </p>
+    <script>
+       //  const p = new Promise()
+
+        // const p = new Promise(()=>{})
+        // console.log(p); ny default promise is pending
+        
+        //  const p = new Promise((resolve , reject)=>{
+        //      setTimeout(()=>{
+        //  console.log('promise is resolve');
+                
+        //         resolve({name:'sai'})
+        //     console.log('promise is rejected');
+            
+        //     reject({name :'viswanath'})
+            
+        //      } , 3000)
+            
+        //  })
+        // // console.log(p);
+        // // //==========================================================
+        // const p = new Promise((resolve , reject)=>{
+        //     const number = Math.floor(Math.random()*10+1)
+        //     if(number>4){
+        //         resolve(number)
+        //     }
+        //     else{
+        //         reject(then)
+        //     }
+        // })
+        // p.then(()=>{
+        //     console.log('promise is resolved');
+            
+        // })
+        // .catch(()=>{
+        //     console.log('promise is rejected');
+            
+        // })
+        // .finally(()=>{
+        //     console.log('always finally');
+            
+        // })
+        
+        // p.then((res)=>{
+        //     console.log('promise is resolved twice' , res);
+            
+        // })
+        // .catch((err)=>{
+        //     console.log('promise is rejected XD' , err);
+            
+        // })
+        // .finally(()=>{
+        //     console.log('always finally');
+            
+        // })
+    </script>
+    
+    <button id="resolve-btn">RESOLVE</button>
+    <button id="reject-btn">REJECT</button>
+     <script>
+        const resolveBtn = document.querySelector('#resolve-btn')
+        const rejectBtn = document.querySelector('#reject-btn')
+
+       const p1 = new Promise((resolve , reject)=>{
+             resolveBtn.addEventListener('click' , ()=>{
+                 console.log('promise is resolve');
+                
+       })
+             rejectBtn.addEventListener('click' , ()=>{
+                 console.log('promise is rejected');
+                
+         })
+
+    })
+ 
+        
+        const p2 =  p1.then((res)=>{
+             console.log(res);
+            
+        })
+        console.log('then function' , p2);//p2 have as a value //as p2 have a promise , we can use then () , catch() on p2
+        const p3=p2.then(()=>{
+            console.log('third p[rmise resolved');
+            
+        })
+        p3.then(()=>{
+            console.log('Third promise resolve');
+            
+        })
+        //PROMISE CHANING
+    </script>
+</body>
+</html>

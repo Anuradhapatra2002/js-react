@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sendEmail() {
+            return new Promise((resolve , reject)=>{
+                let serverStatus = Math.floor(Math.random()*10+1)
+                setTimeout(()=>{
+                if(serverStatus>4){
+                    resolve('Email sent succesfully');
+                    
+                }
+                else{
+                    reject('Email not sent');
+                    
+                }
+            },1000)
+        })
+    }
+         sendEmail()
+        
+        .then((res)=>{
+            console.log(res);
+            
+        })
+        .cath(()=>{
+            console.log(err);
+            
+        })
+    </script>
+    
+</body>
+</html>
